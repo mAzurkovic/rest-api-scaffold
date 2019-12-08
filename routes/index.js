@@ -21,10 +21,10 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.post('/:name', function(req, res) {
+router.post('/', function(req, res) {
   // Create new item object
   var item = new Item(
-    { name: req.params.name }
+    { name: req.query.name }
   );
 
   // Use mongoose to save it in db
@@ -33,6 +33,14 @@ router.post('/:name', function(req, res) {
     res.sendStatus(200);
   });
   
+});
+
+router.delete('/', function(req, res) {
+  nameQuery = req.query.name;
+  Item.remove({name: nameQuery}, function(err) {
+    if (err) return console.error(err);
+    res.sendStatus(200);    
+  });
 });
 
 module.exports = router;
