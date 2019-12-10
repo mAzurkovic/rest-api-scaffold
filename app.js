@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 // Configure MongoDB connection
 var dbAuth = process.env.REST_API_SCAFFOLD_USER + ':' + process.env.REST_API_SCAFFOLD_PASS;
-var dbString = 'mongodb://' + dbAuth + '@ds253348.mlab.com:53348/rest-api-scaffold-db';
+var dbString = 'mongodb://localhost:27017/restapiscaffold_db';
 mongoose.connect(dbString);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
