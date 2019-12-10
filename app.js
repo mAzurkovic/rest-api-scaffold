@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 // Configure MongoDB connection
 var dbAuth = process.env.REST_API_SCAFFOLD_USER + ':' + process.env.REST_API_SCAFFOLD_PASS;
-var dbString = 'mongodb://localhost:27017/restapiscaffold_db';
+var dbString = 'mongodb://mongo:27017/restapiscaffold_db'; // This url talks to mongo docker container
 mongoose.connect(dbString);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
