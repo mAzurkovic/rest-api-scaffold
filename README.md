@@ -35,3 +35,5 @@ MongoDB container.
 Make sure both the `Dockerfile` for the RESTful API service and the `docker-compose.yml` file are in the same directory.
 To start the application, run `docker-compose up` (it will automatically build the `Dockerfile` into an image and start
 both containers).
+
+By default open the service on port `8000` and hit any of the endpoints to view.
